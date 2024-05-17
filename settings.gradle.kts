@@ -2,6 +2,9 @@ import groovy.lang.Binding
 import groovy.lang.Script
 import java.net.URI
 
+include(":lib_http")
+
+
 include(":lib_base")
 
 
@@ -35,7 +38,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyDemoAppFrist"
+rootProject.name = "MyDemoAppFirst"
 include(":app")
 /*object : Script() {
     override fun setBinding(binding: Binding?) {
@@ -43,14 +46,14 @@ include(":app")
     }
 
     override fun run(): Any {
-        TODO("Not yet implemented")
+
     }
 
     override fun evaluate(file: File?): Any {
         return super.evaluate(
             File(
                 settingsDir.parentFile,
-                "MyDemoAppFrist/flutter_module/.android/include_flutter.groovy"
+                "MyDemoAppFirst/flutter_module/.android/include_flutter.groovy"
             )
         )
     }
