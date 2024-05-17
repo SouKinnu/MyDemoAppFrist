@@ -1,8 +1,9 @@
 package com.song.lib_http
 
+import com.song.lib_http.data.BaseResultData
 import com.song.lib_http.data.SimWordsData
+import com.song.lib_http.utils.SIM_WORDS
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 /**
  * @Author      : SongJin yu

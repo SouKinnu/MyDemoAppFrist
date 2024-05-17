@@ -1,6 +1,8 @@
 package com.song.lib_http
 
 import com.google.gson.GsonBuilder
+import com.song.lib_http.utils.BASE_URL
+import com.song.lib_http.utils.TIME_OUT
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,10 +17,6 @@ import java.util.concurrent.TimeUnit
  * @Description :描述
  */
 class HttpClient {
-    companion object {
-        const val TIME_OUT = 30L
-    }
-
     private val okHttpClient: OkHttpClient by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
         OkHttpClient.Builder()
             .callTimeout(TIME_OUT, TimeUnit.SECONDS)

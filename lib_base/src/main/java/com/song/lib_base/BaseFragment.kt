@@ -8,6 +8,7 @@ import androidx.annotation.Keep
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import com.song.lib_base.utils.InitListener
 import java.lang.reflect.ParameterizedType
 
 /**

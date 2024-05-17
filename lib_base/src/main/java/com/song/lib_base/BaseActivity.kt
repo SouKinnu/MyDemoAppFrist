@@ -7,6 +7,7 @@ import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import com.song.lib_base.utils.InitListener
 import java.lang.reflect.ParameterizedType
 
 /**
