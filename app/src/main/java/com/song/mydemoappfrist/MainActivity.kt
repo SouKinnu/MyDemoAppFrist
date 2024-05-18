@@ -2,6 +2,7 @@ package com.song.mydemoappfrist
 
 import com.song.lib_base.BaseActivity
 import com.song.mydemoappfrist.databinding.ActivityMainBinding
+
 /**
  * @Author : SongJin yu
  * @Email : kinnusou@gmail.com
@@ -11,7 +12,10 @@ import com.song.mydemoappfrist.databinding.ActivityMainBinding
 class MainActivity :
     BaseActivity<ActivityMainBinding, MainViewModel>(ActivityMainBinding::inflate) {
     override fun initView() {
-
+        viewModel.getSimWords()
+        viewModel.simWordsDataStateFlow.observe(this) {
+            binding.aaa.text=it.toString()
+        }
     }
 
     override fun initData() {

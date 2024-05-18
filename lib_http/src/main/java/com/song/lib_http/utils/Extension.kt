@@ -26,8 +26,3 @@ fun <T> BaseResultData<T>.parseData(listenerBuilder: ResultBuilder<T>.() -> Unit
     }
     listener.onComplete()
 }
-
-
-fun Context.startCallPhoneActivity(number: String) {
-    startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number")))
-}

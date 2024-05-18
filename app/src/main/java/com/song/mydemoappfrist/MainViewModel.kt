@@ -1,6 +1,11 @@
 package com.song.mydemoappfrist
 
+import androidx.lifecycle.MutableLiveData
 import com.song.lib_base.BaseViewModel
+import com.song.lib_http.data.SimWordsData
+import com.song.lib_http.utils.ApiRepository
+import com.song.lib_http.utils.launchRequest
+
 /**
  * @Author : SongJin yu
  * @Email : kinnusou@gmail.com
@@ -8,5 +13,19 @@ import com.song.lib_base.BaseViewModel
  * @Description :描述
  */
 class MainViewModel : BaseViewModel() {
-
+    private val mApiRepository: ApiRepository by lazy {
+        ApiRepository()
+    }
+    val simWordsDataStateFlow = MutableLiveData(emptyList<SimWordsData>())
+    fun getSimWords() {
+        launchRequest(
+            {
+                mApiRepository.getSimWords()
+            }, {
+                if (it != null) {
+                    simWordsDataStateFlow.value = it
+                }
+            }
+        )
+    }
 }

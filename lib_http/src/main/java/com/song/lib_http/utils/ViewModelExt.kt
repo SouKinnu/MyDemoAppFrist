@@ -15,22 +15,14 @@ import kotlinx.coroutines.withContext
 
 /**
  * @param T
- * @param isLoading
  * @param block
  * @param success
- * @param failed
- * @param error
  */
 fun <T> BaseViewModel.launchRequest(
-    isLoading: Boolean = false,
     block: suspend () -> BaseResultData<T>,
     success: suspend (T?) -> Unit,
-    failed: suspend (errorCode: String?, errorMsg: String?) -> Unit = { _, _ -> },
-    error: suspend (throwable: Throwable) -> Unit
 ) {
     launchUi {
-        //  if (isLoading) loadState.setEvent(LoadState.Start())
-
         val resultData = withContext(Dispatchers.IO) {
             block()
         }
@@ -39,18 +31,6 @@ fun <T> BaseViewModel.launchRequest(
             onSuccess = {
                 launchUi {
                     success.invoke(it)
-                }
-            }
-            onFailed = { errorCode, errorMsg ->
-                launchUi {
-                    failed.invoke(errorCode, errorMsg)
-                    //loadState.setEvent(LoadState.Error(errorCode.orEmpty(), errorMsg.orEmpty()))
-                }
-            }
-            onError = {
-                launchUi {
-                    error.invoke(it)
-                    //  loadState.setEvent(LoadState.Error("", it.message.orEmpty()))
                 }
             }
         }
