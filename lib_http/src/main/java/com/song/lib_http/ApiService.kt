@@ -14,5 +14,5 @@ import retrofit2.http.GET
 interface ApiService {
     /*** 舔狗日记*/
     @GET(SIM_WORDS)
-    suspend fun getSimWords(): BaseResultData<List<SimWordsData>>
+    suspend fun getSimWords(): BaseResultData<SimWordsData>
 }

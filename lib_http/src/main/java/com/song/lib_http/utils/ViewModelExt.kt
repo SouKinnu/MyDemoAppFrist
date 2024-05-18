@@ -27,12 +27,6 @@ fun <T> BaseViewModel.launchRequest(
             block()
         }
         Log.e("resultData", "请求结果 $resultData")
-        resultData.parseData {
-            onSuccess = {
-                launchUi {
-                    success.invoke(it)
-                }
-            }
-        }
+        success.invoke(resultData.result)
     }
 }

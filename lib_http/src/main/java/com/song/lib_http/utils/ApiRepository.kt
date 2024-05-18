@@ -17,7 +17,7 @@ class ApiRepository {
     }
 
     suspend fun getSimWords(
-    ): BaseResultData<List<SimWordsData>> {
+    ): BaseResultData<SimWordsData> {
         return mApiService.getSimWords()
     }
 }

@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
@@ -52,10 +51,6 @@ open class BaseViewModel : ViewModel(), DefaultLifecycleObserver, CoroutineScope
             }
         }
     }
-
-
-
-
 
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)

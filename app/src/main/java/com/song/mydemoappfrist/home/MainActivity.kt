@@ -1,6 +1,10 @@
-package com.song.mydemoappfrist
+package com.song.mydemoappfrist.home
 
+
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.song.lib_base.BaseActivity
+import com.song.mydemoappfrist.R
 import com.song.mydemoappfrist.databinding.ActivityMainBinding
 
 /**
@@ -12,10 +16,13 @@ import com.song.mydemoappfrist.databinding.ActivityMainBinding
 class MainActivity :
     BaseActivity<ActivityMainBinding, MainViewModel>(ActivityMainBinding::inflate) {
     override fun initView() {
+
         viewModel.getSimWords()
         viewModel.simWordsDataStateFlow.observe(this) {
-            binding.aaa.text=it.toString()
+
         }
+        val navController = findNavController(R.id.fragment)
+        binding.BottomNavigationView.setupWithNavController(navController)
     }
 
     override fun initData() {
