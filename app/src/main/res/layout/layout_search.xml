@@ -18,7 +18,7 @@
         android:layout_width="70dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/bg_search"
+        android:background="@drawable/bg_button"
         android:text="搜索"
         android:textColor="@color/white"
         android:textSize="18sp"

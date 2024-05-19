@@ -15,11 +15,12 @@ import com.song.mydemoappfrist.R
  * @Date        : on 2024/5/19 18:28.
  * @Description :描述
  */
-class OlyMedalsAdapter(
-    private val olyMedalsList: List<Medals>,
-    private val context: Context
-) :
+class OlyMedalsAdapter(private val context: Context) :
     RecyclerView.Adapter<OlyMedalsAdapter.VH>() {
+    private lateinit var list: List<Medals>
+    fun setListData(olyMedalsList: List<Medals>) {
+        list = olyMedalsList
+    }
 
     class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val goldMedalNum: AppCompatTextView = itemView.findViewById(R.id.gold_medal_num)
@@ -36,16 +37,16 @@ class OlyMedalsAdapter(
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         holder.apply {
-            goldMedalNum.text = olyMedalsList[position].gold
-            silverMedalNum.text = olyMedalsList[position].silver
-            brassMedalNum.text = olyMedalsList[position].bronze
-            rank.text = olyMedalsList[position].rank
-            countryId.text = olyMedalsList[position].countryid
-            countryName.text = olyMedalsList[position].countryname
+            goldMedalNum.text = list[position].gold
+            silverMedalNum.text = list[position].silver
+            brassMedalNum.text = list[position].bronze
+            rank.text = list[position].rank
+            countryId.text = list[position].countryid
+            countryName.text = list[position].countryname
         }
     }
 
     override fun getItemCount(): Int {
-        return olyMedalsList.size
+        return list.size
     }
 }

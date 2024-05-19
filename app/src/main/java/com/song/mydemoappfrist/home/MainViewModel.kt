@@ -1,15 +1,10 @@
 package com.song.mydemoappfrist.home
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import com.song.lib_base.BaseViewModel
-import com.song.lib_http.HttpClient
-import com.song.lib_http.data.SimWordsData
+import com.song.lib_http.data.ContentData
 import com.song.lib_http.utils.ApiRepository
 import com.song.lib_http.utils.launchRequest
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * @Author : SongJin yu
@@ -21,7 +16,7 @@ class MainViewModel : BaseViewModel() {
     private val mApiRepository: ApiRepository by lazy {
         ApiRepository()
     }
-    val simWordsDataStateFlow = MutableLiveData(SimWordsData())
+    val contentDataStateFlow = MutableLiveData(ContentData())
     fun getSimWords() {
         /*viewModelScope.launch(Dispatchers.IO) {
             try {
@@ -34,14 +29,5 @@ class MainViewModel : BaseViewModel() {
                 e.printStackTrace()
             }
         }*/
-        launchRequest(
-            {
-                mApiRepository.getSimWords()
-            }, {
-                if (it != null) {
-                    simWordsDataStateFlow.value = it
-                }
-            }
-        )
     }
 }

@@ -3,7 +3,7 @@ package com.song.lib_http
 import com.song.lib_http.data.BaseResultData
 import com.song.lib_http.data.BingImageData
 import com.song.lib_http.data.OlyMedalsData
-import com.song.lib_http.data.SimWordsData
+import com.song.lib_http.data.ContentData
 import com.song.lib_http.utils.BING_IMAGE
 import com.song.lib_http.utils.OLY_MEDALS
 import com.song.lib_http.utils.SIM_WORDS
@@ -19,7 +19,7 @@ import retrofit2.http.POST
 interface ApiService {
     /*** 舔狗日记*/
     @GET(SIM_WORDS)
-    suspend fun getSimWords(): BaseResultData<SimWordsData>
+    suspend fun getSimWords(): BaseResultData<ContentData>
 
     /*** 必应每日一图*/
     @GET(BING_IMAGE)

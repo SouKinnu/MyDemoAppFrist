@@ -5,7 +5,7 @@ import com.song.lib_http.HttpClient
 import com.song.lib_http.data.BaseResultData
 import com.song.lib_http.data.BingImageData
 import com.song.lib_http.data.OlyMedalsData
-import com.song.lib_http.data.SimWordsData
+import com.song.lib_http.data.ContentData
 
 /**
  * @Author      : SongJin yu
@@ -20,7 +20,7 @@ class ApiRepository {
 
     /*** 舔狗日记*/
     suspend fun getSimWords(
-    ): BaseResultData<SimWordsData> {
+    ): BaseResultData<ContentData> {
         return mApiService.getSimWords()
     }
 

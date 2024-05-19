@@ -12,4 +12,4 @@ import kotlinx.parcelize.Parcelize
  */
 
 @Parcelize
-data class SimWordsData(val content: String? = null) : Parcelable
+data class ContentData(val content: String? = null) : Parcelable
