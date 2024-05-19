@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/film"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/drawable_line"
+        android:padding="10dp"
+        android:src="@drawable/ic_film" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dog"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@id/film"
+        android:background="@drawable/drawable_line"
+        android:padding="10dp"
+        android:src="@drawable/ic_dog" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tang"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@id/dog"
+        android:background="@drawable/drawable_line"
+        android:padding="10dp"
+        android:src="@drawable/ic_tang" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@id/tang"
+        android:background="@drawable/drawable_line"
+        android:padding="10dp"
+        android:src="@drawable/ic_avatar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/fire"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@id/avatar"
+        android:background="@drawable/drawable_line"
+        android:padding="10dp"
+        android:src="@drawable/ic_fire" />
+</RelativeLayout>

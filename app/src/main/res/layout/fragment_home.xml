@@ -1,21 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp">
 
-    <data>
-
-    </data>
-
-    <FrameLayout
+    <com.song.mydemoappfrist.home.home.customview.SearchView
+        android:id="@+id/SearchView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".home.home.HomeFragment">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="a" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/bing_banner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SearchView" />
 
-    </FrameLayout>
-</layout>
+
+    <com.song.mydemoappfrist.home.home.customview.FunctionView
+        android:id="@+id/FunctionView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bing_banner" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/rankings_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="官方奥运会排行榜数据"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/FunctionView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rankings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rankings_name" />
+</androidx.constraintlayout.widget.ConstraintLayout>

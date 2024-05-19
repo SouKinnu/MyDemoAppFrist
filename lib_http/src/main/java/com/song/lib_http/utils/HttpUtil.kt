@@ -13,3 +13,9 @@ const val BASE_URL = "https://api.oioweb.cn/"
 
 /*** 舔狗日记 api*/
 const val SIM_WORDS = "/api/SimpWords"
+
+/*** 必应每日一图 api*/
+const val BING_IMAGE = "/api/bing"
+
+/*** 官方奥运会排行榜数据 api*/
+const val OLY_MEDALS = "/api/search/getOlyMedals"

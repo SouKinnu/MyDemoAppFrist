@@ -5,7 +5,7 @@ plugins {
 android {
     namespace = "com.song.mydemoappfrist"
     compileSdk = 34
-    dataBinding {
+    viewBinding {
         enable = true
     }
     defaultConfig {
@@ -58,4 +58,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }

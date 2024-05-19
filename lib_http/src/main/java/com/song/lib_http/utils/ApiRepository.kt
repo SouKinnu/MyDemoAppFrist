@@ -3,6 +3,8 @@ package com.song.lib_http.utils
 import com.song.lib_http.ApiService
 import com.song.lib_http.HttpClient
 import com.song.lib_http.data.BaseResultData
+import com.song.lib_http.data.BingImageData
+import com.song.lib_http.data.OlyMedalsData
 import com.song.lib_http.data.SimWordsData
 
 /**
@@ -16,8 +18,21 @@ class ApiRepository {
         HttpClient.getApiService
     }
 
+    /*** 舔狗日记*/
     suspend fun getSimWords(
     ): BaseResultData<SimWordsData> {
         return mApiService.getSimWords()
+    }
+
+    /*** 必应每日一图*/
+    suspend fun getBingImage(
+    ): BaseResultData<List<BingImageData>> {
+        return mApiService.getBingImage()
+    }
+
+    /*** 官方奥运会排行榜数据*/
+    suspend fun getOlyMedals(
+    ): BaseResultData<OlyMedalsData> {
+        return mApiService.getOlyMedals()
     }
 }

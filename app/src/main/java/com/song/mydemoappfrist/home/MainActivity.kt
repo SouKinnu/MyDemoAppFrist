@@ -16,11 +16,6 @@ import com.song.mydemoappfrist.databinding.ActivityMainBinding
 class MainActivity :
     BaseActivity<ActivityMainBinding, MainViewModel>(ActivityMainBinding::inflate) {
     override fun initView() {
-
-        viewModel.getSimWords()
-        viewModel.simWordsDataStateFlow.observe(this) {
-
-        }
         val navController = findNavController(R.id.fragment)
         binding.BottomNavigationView.setupWithNavController(navController)
     }
