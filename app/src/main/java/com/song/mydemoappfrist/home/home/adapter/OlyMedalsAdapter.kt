@@ -4,10 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.song.lib_http.data.Medals
-import com.song.mydemoappfrist.R
+import com.song.mydemoappfrist.databinding.ItemOlymedalsListBinding
 
 /**
  * @Author      : SongJin yu
@@ -23,26 +22,27 @@ class OlyMedalsAdapter(private val context: Context) :
     }
 
     class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val goldMedalNum: AppCompatTextView = itemView.findViewById(R.id.gold_medal_num)
-        val silverMedalNum: AppCompatTextView = itemView.findViewById(R.id.silver_medal_num)
-        val brassMedalNum: AppCompatTextView = itemView.findViewById(R.id.brass_medal_num)
-        val rank: AppCompatTextView = itemView.findViewById(R.id.rank)
-        val countryId: AppCompatTextView = itemView.findViewById(R.id.countryid)
-        val countryName: AppCompatTextView = itemView.findViewById(R.id.countryname)
+        val binding = ItemOlymedalsListBinding.bind(itemView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        return VH(LayoutInflater.from(context).inflate(R.layout.item_olymedals_list, parent, false))
+        return VH(
+            ItemOlymedalsListBinding.inflate(
+                LayoutInflater.from(context),
+                parent,
+                false
+            ).root
+        )
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        holder.apply {
+        holder.binding.apply {
             goldMedalNum.text = list[position].gold
             silverMedalNum.text = list[position].silver
             brassMedalNum.text = list[position].bronze
             rank.text = list[position].rank
-            countryId.text = list[position].countryid
-            countryName.text = list[position].countryname
+            countryid.text = list[position].countryid
+            countryname.text = list[position].countryname
         }
     }
 

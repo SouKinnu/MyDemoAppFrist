@@ -1,5 +1,6 @@
 package com.song.mydemoappfrist.home.home
 
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.song.lib_base.BaseViewModel
 import com.song.lib_http.data.BingImageData
@@ -18,24 +19,27 @@ class HomeViewModel : BaseViewModel() {
     val bingImageData = MutableLiveData<List<BingImageData>>()
     val olyMedalsData = MutableLiveData<OlyMedalsData>()
     val simWordsData = MutableLiveData<ContentData>()
+
     private val apiRepository: ApiRepository by lazy {
         ApiRepository()
     }
 
-    fun getBingImage() {
-        launchRequest({
-            apiRepository.getBingImage()
-        }, {
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
+        getBingImage()
+        getOlyMedals()
+    }
+
+    private fun getBingImage() {
+        launchRequest({ apiRepository.getBingImage() }, {
             if (it != null) {
                 bingImageData.value = it
             }
         })
     }
 
-    fun getOlyMedals() {
-        launchRequest({
-            apiRepository.getOlyMedals()
-        }, {
+    private fun getOlyMedals() {
+        launchRequest({ apiRepository.getOlyMedals() }, {
             if (it != null) {
                 olyMedalsData.value = it
             }
@@ -43,14 +47,10 @@ class HomeViewModel : BaseViewModel() {
     }
 
     fun getSimWords() {
-        launchRequest(
-            {
-                apiRepository.getSimWords()
-            }, {
-                if (it != null) {
-                    simWordsData.value = it
-                }
+        launchRequest({ apiRepository.getSimWords() }, {
+            if (it != null) {
+                simWordsData.value = it
             }
-        )
+        })
     }
 }

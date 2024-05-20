@@ -6,6 +6,7 @@ import com.song.lib_http.data.BaseResultData
 import com.song.lib_http.data.BingImageData
 import com.song.lib_http.data.OlyMedalsData
 import com.song.lib_http.data.ContentData
+import com.song.lib_http.data.MiYSheData
 
 /**
  * @Author      : SongJin yu
@@ -34,5 +35,11 @@ class ApiRepository {
     suspend fun getOlyMedals(
     ): BaseResultData<OlyMedalsData> {
         return mApiService.getOlyMedals()
+    }
+
+    /*** /*** 米游社随机头像*/*/
+    suspend fun getMiYouShe(
+    ): BaseResultData<List<MiYSheData>> {
+        return mApiService.getMiYouShe()
     }
 }

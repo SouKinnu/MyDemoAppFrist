@@ -1,7 +1,9 @@
 package com.song.mydemoappfrist.home.home
 
+import android.content.Intent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.song.lib_base.BaseFragment
+import com.song.mydemoappfrist.avatar.AvatarActivity
 import com.song.mydemoappfrist.databinding.FragmentHomeBinding
 import com.song.mydemoappfrist.home.home.adapter.BannerAdapter
 import com.song.mydemoappfrist.home.home.adapter.OlyMedalsAdapter
@@ -19,21 +21,18 @@ class HomeFragment :
 
     override fun initView() {
         viewModel.apply {
-            getBingImage()
             bingImageData.observe(this@HomeFragment) {
                 binding.bingBanner.adapter = BannerAdapter(it, requireContext())
             }
-            getOlyMedals()
             olyMedalsData.observe(this@HomeFragment) {
                 olyMedalsAdapter.setListData(it.medalsList)
                 binding.rankings.adapter = olyMedalsAdapter
-                binding.rankings.layoutManager = LinearLayoutManager(context)
             }
         }
     }
 
     override fun initData() {
-
+        binding.rankings.layoutManager = LinearLayoutManager(context)
     }
 
     override fun initEvent() {
@@ -45,6 +44,13 @@ class HomeFragment :
                         showContentDialog(it.content.toString())
                     }
                 }
+
+                FunctionView.AVATAR -> startActivity(
+                    Intent(
+                        requireContext(),
+                        AvatarActivity::class.java
+                    )
+                )
             }
         }
     }

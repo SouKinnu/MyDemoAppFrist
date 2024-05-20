@@ -4,7 +4,9 @@ import com.song.lib_http.data.BaseResultData
 import com.song.lib_http.data.BingImageData
 import com.song.lib_http.data.OlyMedalsData
 import com.song.lib_http.data.ContentData
+import com.song.lib_http.data.MiYSheData
 import com.song.lib_http.utils.BING_IMAGE
+import com.song.lib_http.utils.MI_YOU_SHE_AVATAR
 import com.song.lib_http.utils.OLY_MEDALS
 import com.song.lib_http.utils.SIM_WORDS
 import retrofit2.http.GET
@@ -28,4 +30,8 @@ interface ApiService {
     /*** 官方奥运会排行榜数据*/
     @POST(OLY_MEDALS)
     suspend fun getOlyMedals(): BaseResultData<OlyMedalsData>
+
+    /*** 米游社随机头像*/
+    @GET(MI_YOU_SHE_AVATAR)
+    suspend fun getMiYouShe(): BaseResultData<List<MiYSheData>>
 }

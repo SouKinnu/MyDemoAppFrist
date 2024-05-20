@@ -7,7 +7,7 @@ package com.song.lib_http.utils
  * @Description :描述
  */
 
-const val API_STATUS_OK = "0000"
+const val API_STATUS_OK = 200
 const val TIME_OUT = 30L
 const val BASE_URL = "https://api.oioweb.cn/"
 
@@ -19,3 +19,6 @@ const val BING_IMAGE = "/api/bing"
 
 /*** 官方奥运会排行榜数据 api*/
 const val OLY_MEDALS = "/api/search/getOlyMedals"
+
+/*** 米游社随机头像 api*/
+const val MI_YOU_SHE_AVATAR = "/api/picture/miyoushe_avatar"

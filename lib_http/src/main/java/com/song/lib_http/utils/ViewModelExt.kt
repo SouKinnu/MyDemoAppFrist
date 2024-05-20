@@ -27,6 +27,8 @@ fun <T> BaseViewModel.launchRequest(
             block()
         }
         Log.e("resultData", "请求结果 $resultData")
-        success.invoke(resultData.result)
+        if (resultData.code == API_STATUS_OK) {
+            success.invoke(resultData.result)
+        }
     }
 }
