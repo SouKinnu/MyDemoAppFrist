@@ -6,12 +6,13 @@
     android:padding="5dp">
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_content"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@id/search"
         android:background="@null"
-        android:hint="食物营养查询，吃适合的食物" />
+        android:hint="请输入城市查询天气信息" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/search"

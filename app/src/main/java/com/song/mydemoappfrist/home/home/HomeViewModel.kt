@@ -6,6 +6,7 @@ import com.song.lib_base.BaseViewModel
 import com.song.lib_http.data.BingImageData
 import com.song.lib_http.data.ContentData
 import com.song.lib_http.data.OlyMedalsData
+import com.song.lib_http.data.WeatherData
 import com.song.lib_http.utils.ApiRepository
 import com.song.lib_http.utils.launchRequest
 

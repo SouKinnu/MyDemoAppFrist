@@ -22,3 +22,6 @@ const val OLY_MEDALS = "/api/search/getOlyMedals"
 
 /*** 米游社随机头像 api*/
 const val MI_YOU_SHE_AVATAR = "/api/picture/miyoushe_avatar"
+
+/*** 自定义地区天气信息查询 api*/
+const val WEATHER = "/api/weather/weather"

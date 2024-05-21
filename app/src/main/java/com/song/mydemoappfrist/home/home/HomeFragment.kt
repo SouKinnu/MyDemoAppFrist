@@ -9,6 +9,7 @@ import com.song.mydemoappfrist.home.home.adapter.BannerAdapter
 import com.song.mydemoappfrist.home.home.adapter.OlyMedalsAdapter
 import com.song.mydemoappfrist.home.home.customview.FunctionView
 import com.song.mydemoappfrist.home.home.dialog.ContentDialog
+import com.song.mydemoappfrist.weather.WeatherActivity
 
 class HomeFragment :
     BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHomeBinding::inflate) {
@@ -36,21 +37,25 @@ class HomeFragment :
     }
 
     override fun initEvent() {
-        binding.FunctionView.setOnClickListener { it ->
-            when (it) {
-                FunctionView.DOG -> viewModel.apply {
-                    getSimWords()
-                    simWordsData.observe(this@HomeFragment) {
-                        showContentDialog(it.content.toString())
+        binding.apply {
+            FView.setOnClickListener { it ->
+                when (it) {
+                    FunctionView.DOG -> viewModel.apply {
+                        getSimWords()
+                        simWordsData.observe(this@HomeFragment) {
+                            showContentDialog(it.content.toString())
+                        }
                     }
-                }
 
-                FunctionView.AVATAR -> startActivity(
-                    Intent(
-                        requireContext(),
-                        AvatarActivity::class.java
+                    FunctionView.AVATAR -> startActivity(
+                        Intent(requireContext(), AvatarActivity::class.java)
                     )
-                )
+                }
+            }
+            SearchView.setOnClickListener {
+                startActivity(Intent(context, WeatherActivity::class.java).apply {
+                    putExtra("cityName", it)
+                })
             }
         }
     }

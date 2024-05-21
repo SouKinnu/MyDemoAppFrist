@@ -7,6 +7,7 @@ import com.song.lib_http.data.BingImageData
 import com.song.lib_http.data.OlyMedalsData
 import com.song.lib_http.data.ContentData
 import com.song.lib_http.data.MiYSheData
+import com.song.lib_http.data.WeatherData
 
 /**
  * @Author      : SongJin yu
@@ -41,5 +42,12 @@ class ApiRepository {
     suspend fun getMiYouShe(
     ): BaseResultData<List<MiYSheData>> {
         return mApiService.getMiYouShe()
+    }
+
+    /*** /*** 自定义地区天气信息查询*/*/
+    suspend fun getWeather(
+        cityName: String
+    ): BaseResultData<WeatherData> {
+        return mApiService.getWeather(cityName)
     }
 }

@@ -5,12 +5,15 @@ import com.song.lib_http.data.BingImageData
 import com.song.lib_http.data.OlyMedalsData
 import com.song.lib_http.data.ContentData
 import com.song.lib_http.data.MiYSheData
+import com.song.lib_http.data.WeatherData
 import com.song.lib_http.utils.BING_IMAGE
 import com.song.lib_http.utils.MI_YOU_SHE_AVATAR
 import com.song.lib_http.utils.OLY_MEDALS
 import com.song.lib_http.utils.SIM_WORDS
+import com.song.lib_http.utils.WEATHER
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 /**
  * @Author      : SongJin yu
@@ -34,4 +37,8 @@ interface ApiService {
     /*** 米游社随机头像*/
     @GET(MI_YOU_SHE_AVATAR)
     suspend fun getMiYouShe(): BaseResultData<List<MiYSheData>>
+
+    /*** 自定义地区天气信息查询*/
+    @GET(WEATHER)
+    suspend fun getWeather(@Query("city_name") cityName: String): BaseResultData<WeatherData>
 }
