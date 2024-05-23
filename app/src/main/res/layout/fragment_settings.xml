@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
     tools:context=".home.settings.SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="c" />
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/theme_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/drawable_line"
+        android:padding="15dp"
+        android:text="主题切换"
+        android:textStyle="bold"
+        app:switchMinWidth="60dp"
+        app:switchPadding="200dp" />
 
-</RelativeLayout>
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/language_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/drawable_line"
+        android:padding="15dp"
+        android:text="语言切换"
+        android:textStyle="bold"
+        app:switchMinWidth="60dp"
+        app:switchPadding="200dp" />
+
+</LinearLayout>
