@@ -23,14 +23,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  lib_network:
+    path: lib_network
+  dio: ^5.4.3+1
+  retrofit: ^4.1.0
+  json_annotation: ^4.9.0
   cupertino_icons: ^1.0.6
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.10
+  retrofit_generator: ^8.1.0
+  json_serializable: ^6.8.0
   flutter_lints: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
