@@ -11,8 +11,8 @@ BaseEntity<T> _$BaseEntityFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     BaseEntity<T>(
-      message: json['message'] as String,
-      status: json['status'] as String,
+      code: (json['code'] as num).toInt(),
+      msg: json['msg'] as String,
       result: _$nullableGenericFromJson(json['result'], fromJsonT),
     );
 
@@ -21,8 +21,8 @@ Map<String, dynamic> _$BaseEntityToJson<T>(
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
-      'message': instance.message,
-      'status': instance.status,
+      'code': instance.code,
+      'msg': instance.msg,
       'result': _$nullableGenericToJson(instance.result, toJsonT),
     };
 
